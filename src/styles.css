@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+section .employee-section{
+  background: url("/assets/employee-image.jpg") center no-repeat;
+  background-size: cover;
+  height: 657px;
+}
+
+.employee-form form {
+  width: 50%;
+  margin: auto;
+}
+
+.employee-form .form-label {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    margin-left: 13px;
+    font-style: oblique;
+}
+.employee-label {
+  padding-top: 1rem;
+}
+
+.employee-form button {
+  width: 100%;
+  border-radius: 25px;
+}
+.btn-submit {
+  color: #fff;
+  background-color: #71e4af;
+  border-color: #71e4af;
+  font-weight: bold;
+  letter-spacing: 1.0px;
+  font-size: 23px;
+}
+.btn-submit:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+}
+.input-group-text {
+  background-color: #d7f6fb;
+  border: 1px solid #d7f6fb;
+  font-size: 17px;
+}
+.btn-danger{
+  background-color: #dc3545 !important;
+}
+.fs18{
+  font-size: 18px
+}
+.c-pointer{
+  cursor: pointer
+}

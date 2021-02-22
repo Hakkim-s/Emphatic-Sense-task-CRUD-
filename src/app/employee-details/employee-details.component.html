@@ -1,0 +1,34 @@
+<section class="employee-section">
+
+    <div class='container pt-5 employee-form'>
+        <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+            <h3 class="text-center text-white">Employee Details</h3>
+            <div class="mb-3">
+                <label for="EmployeeidInput" class="form-label employee-label">Employee Id : </label>
+                <input type="text" formControlName="empId" class="form-control" id="EmployeeidInput"
+                    placeholder="Your Employee Id">
+            </div>
+            <div class="mb-3">
+                <label for="firstnameInput" class="form-label">First Name : </label>
+                <input type="text" formControlName="firstName" class="form-control" id="firstnameInput"
+                    placeholder="Your First Name">
+            </div>
+            <div class="mb-3">
+                <label for="lastnameInput" class="form-label">Last Name : </label>
+                <input type="text" formControlName="lastName" class="form-control" id="lastnameInput"
+                    placeholder="Your Last Name">
+            </div>
+            <label for="emailInput" class="form-label">Email : </label>
+            <div class="input-group mb-3">
+                <input type="email" formControlName="emailId" class="form-control" id="emailInput" 
+                   placeholder="Your Email">
+                <div class="input-group-append">
+                    <span class="input-group-text">@emphaticsense.com</span>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-submit">Submit</button>
+        </form>
+
+    </div>
+</section>

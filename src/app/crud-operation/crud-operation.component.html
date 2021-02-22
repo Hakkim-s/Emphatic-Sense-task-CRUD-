@@ -1,0 +1,80 @@
+<div class="container mt-5">
+
+    <div class="row">
+
+        <div class="col-md-2">
+
+            <label>Employee id :</label>
+            <input value="empId" [(ngModel)]="empId" (blur)="clearaddNewflag()" />
+        </div>
+
+        <div class="col-md-2">
+
+            <label>First Name :</label>
+            <input value="firstName" [(ngModel)]="firstName" (blur)="clearaddNewflag()" />
+        </div>
+
+        <div class="col-md-2">
+
+            <label>Last Name :</label>
+            <input value="lastName" [(ngModel)]="lastName" (blur)="clearaddNewflag()" />
+        </div>
+        <div class="col-md-2">
+
+            <label>Email :</label>
+            <input value="emailId" [(ngModel)]="emailId" (blur)="clearaddNewflag()" />
+        </div>
+        <span class="text-danger" *ngIf="addNewflag">Please fill All the above inputs </span>
+
+    </div>
+
+    <button class="btn btn-success mt-1" (click)="addToList()">add</button>
+    <button *ngIf="data == ''" class="btn btn-success pull-right mt-1" (click)="getJsonData()">Get All Employee
+        List</button>
+
+    <button *ngIf="data != ''" class="btn btn-danger pull-right mt-1" (click)="deleteAll()">Delete All</button>
+
+    <div class="input-group mt-2" *ngIf="data != null">
+        <input type="text" [(ngModel)]="searchText" class="form-control col-md-3" placeholder="Search" />
+        <div class="input-group-append">
+            <span class="input-group-text " (click)="clearsearchText()"> clear</span>
+        </div>
+    </div>
+    
+    <div class="m-2">
+
+        <table class="table table-striped" *ngIf="data != ''" aria-describedby="employee Data">
+            <thead *ngIf="data != ''">
+                <th scope="col">Employee id <i class="fa fa-sort c-pointer" (click)="eventSortData('id')" aria-hidden="true"></i>
+                </th>
+                <th scope="col" >First Name <i class="fa fa-sort c-pointer" (click)="eventSortData('first_name')"
+                        aria-hidden="true"></i> </th>
+                <th scope="col" >Last Name <i class="fa fa-sort c-pointer" (click)="eventSortData('last_name')"
+                        aria-hidden="true"></i> </th>
+                <th scope="col" >Email <i class="fa fa-sort c-pointer" (click)="eventSortData('email')" aria-hidden="true"></i> </th>
+                <th scope="col" >Delete</th>
+
+
+            </thead>
+            <tbody>
+                <tr *ngFor="let res of data  | filter : searchText  | paginate: { itemsPerPage: 5, currentPage: currentPageNo }    ;
+        let i = index
+      ">
+                    <td>{{res.id}}</td>
+                    <td>{{res.first_name}}</td>
+                    <td>{{res.last_name}}</td>
+                    <td>{{res.email}}</td>
+                    <button *ngIf="data !='' " class="btn btn-danger btn-sm" (click)='deletedata(i)'>Delete </button>
+                </tr>
+            </tbody>
+
+        </table>
+        <div *ngIf="data != ''">
+            <pagination-controls (pageChange)="filterdataList($event)" previousLabel="Pre" nextLabel="Next">
+            </pagination-controls>
+
+        </div>
+
+        <span class="text-danger fs18 mt-5" *ngIf='data == ""'> No records to show </span>
+    </div>
+</div>

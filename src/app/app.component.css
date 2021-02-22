@@ -1,0 +1,32 @@
+/* section{
+    background: url('/assets/employee-image.jpg') center no-repeat ;
+    background-size: cover;
+    height: 657px;
+
+}
+
+.employee-form form {
+    width: 50%;
+    margin: auto;
+}
+
+.employee-form  .form-label {
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+  margin-left: 13px;
+}
+.employee-label{
+    padding-top: 1rem;
+}
+
+.employee-form button {
+    width: 100%;
+    border-radius: 25px;
+}
+.btn-submit{
+    color: #fff;
+    background-color: #71e4af;
+    border-color: #71e4af;
+font-weight: bold;
+} */
